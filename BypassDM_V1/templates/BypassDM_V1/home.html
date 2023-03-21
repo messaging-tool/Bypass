@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Say hello to anyone on Twitter</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+    /* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222;
+  color: #fff;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+/* Container styles */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #333;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+label {
+  display: block;
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid #555;
+  padding: 10px;
+  width: 100%;
+}
+
+.input-group-addon {
+  background-color: #555;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  border: none;
+  margin-right: 10px;
+}
+
+.input-group input[type="text"] {
+  flex-grow: 1;
+  border: none;
+  font-size: 1.3em;
+  padding: 10px;
+  color: #fff;
+  background-color: #444;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  font-size: 1.3em;
+  resize: vertical;
+  min-height: 200px;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: #444;
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: #444;
+}
+
+option {
+  color: #fff;
+}
+
+button[type="submit"] {
+  background-color: #1da1f2;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.3em;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+}
+
+button[type="submit"]:hover {
+  background-color: #0c8fc4;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+    border-radius: 0;
+  }
+
+  .input-group-addon {
+    font-size: 1em;
+  }
+
+  .input-group input[type="text"],
+  textarea,
+  button[type="submit"] {
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+label {
+font-size: 1.2em;
+}
+}
+  </style>
+</head>
+<body>
+  <header>
+    
+    <img src="https://ibb.co/5TwCnkb"><img src="https://ibb.co/T13ZnRZ"><img src="https://i.ibb.co/T13ZnRZ/xoxo-2.png" alt="logo" class="logo">
+    <h2>Say hello to anyone on Twitter Personally regardless of their DM's settings!</h2>
+    <h3><a href="{% url 'twitter_logout' %}" style="position: absolute; top: 20px; right: 20px; color: #000000;"><strong>Logout</a></h3>
+    <input type="hidden" name="arg_name" value="arg_value">
+  </header>
+  <div class="container">
+    <form method="post">
+        {% csrf_token %}
+      <div class="form-group">
+        <label for="recipient">Twitter Username:</label>
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" id="recipient" name="recipient" placeholder="Enter twitter username...">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="text" placeholder="Enter your message you want to share..." rows="5"></textarea>
+      </div>
+      <button type="submit">Tweet</button>
+    </form>
+  </div>
+</body>
+</html>
