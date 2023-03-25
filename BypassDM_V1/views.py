@@ -11,10 +11,15 @@ from .forms import TweetForm
 from autho.models import TwitterAuthToken, TwitterUser
 import uuid
 from cryptography.fernet import Fernet
+from django.views.decorators.csrf import csrf_protect
+
+
 
 SECRET_KEY = b'<045349f35b3d41e9b778798f1d4b561caf8084f4ba2640c3d9742ec6e960f6b6a7c3dc277ce4c1432cf0ad5ad1a8c3d5f99736afcafbf596ae6ea060348ceb55b13e869d6d>'
 
+
 @login_required
+@csrf_protect
 def tweet_view(request):
     try:
         twitter_user = TwitterUser.objects.get(user=request.user)
