@@ -52,4 +52,3 @@ tzdata==2022.4
 urllib3==1.26.12
 virtualenv==20.16.5
 wcwidth==0.2.5
-mysqlclient==2.1.1 
