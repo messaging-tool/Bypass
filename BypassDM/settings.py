@@ -80,16 +80,17 @@ WSGI_APPLICATION = 'BypassDM.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-    
-        'ENGINE': 'django.db.backends.mysq',
-        'NAME': 'mydb',
-        'USER': 'e28fw7mie2sqawzk038z',
-        'PASSWORD': 'pscale_pw_pxAZ0VocEeK7H41P6Em5rSSdspDPKdFBHQKaAQTD5EB',
-        'HOST': 'us-east.connect.psdb.cloud',
-        'PORT': '3306',
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': os.environ.get('DB_NAME'),
+    'HOST': os.environ.get('DB_HOST'),
+    'PORT': os.environ.get('DB_PORT'),
+    'USER': os.environ.get('DB_USER'),
+    'PASSWORD': os.environ.get('DB_PASSWORD'),
+    'OPTIONS': {'ssl': {'ca': os.environ.get('MYSQL_ATTR_SSL_CA')}}
+  }
 }
+
 
 
 
