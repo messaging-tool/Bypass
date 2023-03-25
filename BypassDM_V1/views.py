@@ -67,9 +67,9 @@ def tweet_view(request):
 
 
 @login_required
-def message_view(request, tweet_uuid):
+def message_view(request, message_id>):
     try:
-        tweet = Tweet.objects.get(link=f'https://BypassDM.com/private_message/{tweet_uuid}/')
+        tweet = Tweet.objects.get(link=f'https://BypassDM.com/private_message/{message_id>}/')
         if tweet.username.lower() == request.user.username.lower():
             # Encrypt the message using the Fernet module and the secret key
             f = Fernet(SECRET_KEY)
