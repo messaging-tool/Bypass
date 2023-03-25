@@ -82,12 +82,12 @@ WSGI_APPLICATION = 'BypassDM.wsgi.application'
 DATABASES = {
     'default': {
     
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'jb1SxWPWMHeM17nFGAzf',
-        'HOST': 'containers-us-west-51.railway.app',
-        'PORT': '7127',
+        'ENGINE': 'django.db.backends.mysq',
+        'NAME': 'mydb',
+        'USER': 'e28fw7mie2sqawzk038z',
+        'PASSWORD': 'pscale_pw_pxAZ0VocEeK7H41P6Em5rSSdspDPKdFBHQKaAQTD5EB',
+        'HOST': 'us-east.connect.psdb.cloud',
+        'PORT': '3306',
     }
 }
 
