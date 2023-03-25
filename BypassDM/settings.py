@@ -14,7 +14,9 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DJANGO_DEBUG', cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
+#ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
+# 
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "bypassdm.com", "bypassdm.up.railway.app"]
 
 
 
@@ -79,29 +81,29 @@ WSGI_APPLICATION = 'BypassDM.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'TjI3oF81uiYDMq72egAE',
-        'HOST': 'containers-us-west-17.railway.app',
-        'PORT': '6423',
-    }
-}
-
 # DATABASES = {
 #     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get('railway'),
-#         'USER':os.environ.get('postgres'),
-#         'PASSWORD':os.environ.get('TjI3oF81uiYDMq72egAE'),
-#         'HOST':os.environ.get('containers-us-west-17.railway.app'),
-#         'PORT':os.environ.get('6423')
+#         'NAME': 'railway',
+#         'USER': 'postgres',
+#         'PASSWORD': 'TjI3oF81uiYDMq72egAE',
+#         'HOST': 'containers-us-west-17.railway.app',
+#         'PORT': '6423',
+#     }
+# }
 
-# }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('PGDATABASE'),
+        'USER':os.environ.get('PGUSER'),
+        'PASSWORD':os.environ.get('PGPASSWORD'),
+        'HOST':os.environ.get('PGHOST'),
+        'PORT':os.environ.get('PGPORT')
+
+}
+}
 
 
 
