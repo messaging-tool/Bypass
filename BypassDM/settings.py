@@ -80,16 +80,17 @@ WSGI_APPLICATION = 'BypassDM.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': os.environ.get('DB_NAME'),
-    'HOST': os.environ.get('DB_HOST'),
-    'PORT': os.environ.get('DB_PORT'),
-    'USER': os.environ.get('DB_USER'),
-    'PASSWORD': os.environ.get('DB_PASSWORD'),
-    'OPTIONS': {'ssl': {'ca': os.environ.get('MYSQL_ATTR_SSL_CA')}}
-  }
+    'default': {
+        #'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'TjI3oF81uiYDMq72egAE',
+        'HOST': 'containers-us-west-17.railway.app',
+        'PORT': '6423',
+    }
 }
+
 
 
 
