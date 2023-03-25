@@ -67,9 +67,9 @@ def tweet_view(request):
 
 
 @login_required
-def message_view(request, message_id>):
+def message_view(request, tweet_uuid):
     try:
-        tweet = Tweet.objects.get(link=f'https://BypassDM.com/private_message/{message_id>}/')
+        tweet = Tweet.objects.get(link=f'https://BypassDM.com/private_message/{tweet_uuid}/')
         if tweet.username.lower() == request.user.username.lower():
             # Encrypt the message using the Fernet module and the secret key
             f = Fernet(SECRET_KEY)
@@ -81,6 +81,4 @@ def message_view(request, message_id>):
             return render(request, 'BypassDM_V1/error.html', {'error': 'You are not authorized to view this message'})
     except Tweet.DoesNotExist:
         return render(request, 'BypassDM_V1/error.html', {'error': 'Message not found'})
-
-
 
