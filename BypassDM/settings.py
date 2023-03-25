@@ -80,29 +80,28 @@ WSGI_APPLICATION = 'BypassDM.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'railway',
-#         'USER': 'postgres',
-#         'PASSWORD': 'TjI3oF81uiYDMq72egAE',
-#         'HOST': 'containers-us-west-17.railway.app',
-#         'PORT': '6423',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('PGDATABASE'),
-        'USER':os.environ.get('PGUSER'),
-        'PASSWORD':os.environ.get('PGPASSWORD'),
-        'HOST':os.environ.get('PGHOST'),
-        'PORT':os.environ.get('PGPORT')
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'ptjejsNLDQoFs5eXFEk1',
+        'HOST': 'containers-us-west-205.railway.app',
+        'PORT': '7547',
+    }
+}
 
-}
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('PGDATABASE'),
+#         'USER':os.environ.get('PGUSER'),
+#         'PASSWORD':os.environ.get('PGPASSWORD'),
+#         'HOST':os.environ.get('PGHOST'),
+#         'PORT':os.environ.get('PGPORT')
+
+# }
+# }
 
 
 
