@@ -21,8 +21,6 @@ ALLOWED_HOSTS=["127.0.0.1", "localhost", "bypassdm.com", "bypassdm.up.railway.ap
 
 
 
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
