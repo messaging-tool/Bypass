@@ -17,7 +17,7 @@ DEBUG = True
 
 #ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
-ALLOWED_HOSTS=["127.0.0.1", "localhost", "bypassdm.com", "bypass-production.up.railway.app"]
+ALLOWED_HOSTS=["127.0.0.1", "localhost", "bypassdm.com", "bypassdm.up.railway.app"]
 
 
 
