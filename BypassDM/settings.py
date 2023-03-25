@@ -81,13 +81,13 @@ WSGI_APPLICATION = 'BypassDM.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
+    
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'KcmY9ATfx3Kv64Jo9FzV',
-        'HOST': 'containers-us-west-170.railway.app',
-        'PORT': '6173',
+        'PASSWORD': 'jb1SxWPWMHeM17nFGAzf',
+        'HOST': 'containers-us-west-51.railway.app',
+        'PORT': '7127',
     }
 }
 
