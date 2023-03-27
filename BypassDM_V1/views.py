@@ -72,10 +72,10 @@ def message_view(request, tweet_uuid):
     try:
 #         tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
         
-        # tweet = Tweet.objects.get(link=f'https://bypassdm.com/bypassdm_v1/private_message/{tweet_uuid}/')
-        host = request.get_host()
-        path = reverse_lazy("BypassDM_V1:view_message", kwargs={"tweet_uuid": tweet_uuid})
-        tweet = f"{host}{path}"
+          tweet = Tweet.objects.get(link=f'https://bypassdm.com/bypassdm_v1/private_message/{tweet_uuid}/')
+#         host = request.get_host()
+#         path = reverse_lazy("BypassDM_V1:view_message", kwargs={"tweet_uuid": tweet_uuid})
+#         tweet = f"{host}{path}"
         
         
         if tweet.username.lower() == request.user.username.lower():
