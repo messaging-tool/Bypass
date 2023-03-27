@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from autho.models import TwitterUser
 from cryptography.fernet import Fernet
@@ -7,6 +8,7 @@ class Tweet(models.Model):
     username = models.CharField(max_length=255)
     message = models.CharField(max_length=255)
     link = models.CharField(max_length=255)
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     timestamp = models.DateTimeField(auto_now_add=True)
     twitter_user_ids = models.CharField(max_length=100, default='')
     key = models.BinaryField(null=True)
