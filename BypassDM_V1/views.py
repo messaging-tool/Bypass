@@ -4,7 +4,7 @@ from django.contrib import messages
 from .models import Tweet, EncryptedMessage
 from autho.models import TwitterUser
 import tweepy
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 from django.conf import settings
 from tweepy import OAuthHandler, API
 from .forms import TweetForm
@@ -46,7 +46,7 @@ def tweet_view(request):
 
             # Construct the link with a unique UUID
             tweet_uuid = uuid.uuid4()
-            link = f'https://BypassDM.com/private_message/{tweet_uuid}/'
+            link = f'https://BypassDM.com/BypassDM_V1/private_message/{tweet_uuid}/'
 
             # Save the tweet to the database
             encrypted_message = EncryptedMessage.objects.create(encrypted_message=encrypted_message, encrypted_text=encrypted_message)
@@ -72,10 +72,7 @@ def message_view(request, tweet_uuid):
     try:
 #         tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
         
-          tweet = Tweet.objects.get(link=f'https://bypassdm.com/bypassdm_v1/private_message/{tweet_uuid}/')
-#         host = request.get_host()
-#         path = reverse_lazy("BypassDM_V1:view_message", kwargs={"tweet_uuid": tweet_uuid})
-#         tweet = f"{host}{path}"
+        tweet = Tweet.objects.get(link=f'https://bypassdm.com/BypassDM_V1/private_message/{tweet_uuid}/')
         
         
         if tweet.username.lower() == request.user.username.lower():
