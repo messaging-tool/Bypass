@@ -4,7 +4,7 @@ from django.contrib import messages
 from .models import Tweet, EncryptedMessage
 from autho.models import TwitterUser
 import tweepy
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.conf import settings
 from tweepy import OAuthHandler, API
 from .forms import TweetForm
@@ -72,7 +72,10 @@ def message_view(request, tweet_uuid):
     try:
 #         tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
         
-        tweet = Tweet.objects.get(link=f'https://bypassdm.com/bypassdm_v1/private_message/{tweet_uuid}}/')
+        # tweet = Tweet.objects.get(link=f'https://bypassdm.com/bypassdm_v1/private_message/{tweet_uuid}/')
+        host = request.get_host()
+        path = reverse_lazy("BypassDM_V1:view_message", kwargs={"tweet_uuid": tweet_uuid})
+        tweet = f"{host}{path}"
         
         
         if tweet.username.lower() == request.user.username.lower():
