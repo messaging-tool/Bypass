@@ -85,7 +85,11 @@ def message_view(request, tweet_uuid):
         else:
             return render(request, 'BypassDM_V1/error.html', {'error': 'You are not authorized to view this message'})
     except Tweet.DoesNotExist:
-        return render(request, 'BypassDM_V1/error.html', {'error': 'Message not found'})
+        return render(request, {'error': 'Message not found'})
+        
+         
+#         return render(request, 'BypassDM_V1/error.html', {'error': 'Message not found'})
+
 
 
 
