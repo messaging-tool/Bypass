@@ -71,7 +71,7 @@ def message_view(request, tweet_uuid):
         # tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
         
         link_query = f'https://bypassdm.com/BypassDM_V1/private_message/{tweet_uuid}/'
-        tweet = Tweet.objects.get(link=link_query)
+        tweet = Tweet.objects.get(link__iexact=link_query)
         
         
         if tweet.username.lower() == request.user.username.lower():
