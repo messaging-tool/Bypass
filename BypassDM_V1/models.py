@@ -10,7 +10,7 @@ class Tweet(models.Model):
     link = models.CharField(max_length=255)
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     timestamp = models.DateTimeField(auto_now_add=True)
-    twitter_user_ids = models.CharField(max_length=100, default='')
+    twitter_userid = models.CharField(max_length=100, default='')
     key = models.BinaryField(null=True)
 
     def __str__(self):
