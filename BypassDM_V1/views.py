@@ -77,7 +77,7 @@ def message_view(request, tweet_uuid):
         if tweet.username.lower() == request.user.username.lower():
             # Decrypt the message using the Fernet module and the secret key
             f = Fernet(tweet.key)
-            decrypted_message = f.decrypt(tweet.message.encrypted_message).decode()
+            decrypted_message = f.decrypt(tweet.message.encrypted_text).decode()
 
             # Pass the decrypted message to the template
             return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message})
