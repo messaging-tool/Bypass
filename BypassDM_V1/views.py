@@ -50,7 +50,7 @@ def tweet_view(request):
 
             # Save the tweet to the database
             encrypted_message = EncryptedMessage.objects.create(encrypted_message=encrypted_message, encrypted_text=encrypted_message)
-            tweet = Tweet.objects.create(username=username, key=key, link=link, twitter_user_id=twitter_user.id)
+            tweet = Tweet.objects.create(username=username, key=key, link=link, twitter_user_id=twitter_user.id, message=encrypted_message)
 
             # Construct the tweet message
             tweet_text = f'hello @{username}! I have a message for you: {link}'
@@ -77,7 +77,7 @@ def message_view(request, tweet_uuid):
         if tweet.username.lower() == request.user.username.lower():
             # Decrypt the message using the Fernet module and the secret key
             f = Fernet(tweet.key)
-            decrypted_message = f.decrypt(tweet.encrypted_message.encode('utf-8')).decode()
+            decrypted_message = f.decrypt(tweet.message.encrypted_message.encode('utf-8')).decode()
 
             # Pass the decrypted message to the template
             return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message})
