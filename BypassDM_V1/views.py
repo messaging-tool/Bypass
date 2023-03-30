@@ -46,11 +46,11 @@ def tweet_view(request):
 
             # Construct the link with a unique UUID
             tweet_uuid = uuid.uuid4()
-            link = f'https://BypassDM.com/private_message/{tweet_uuid}/'
+            link = f'https://BypassDM.com/BypassDM_V1/private_message/{tweet_uuid}/'
 
             # Save the tweet to the database
-            encrypted_message = EncryptedMessage.objects.create(encrypted_message=encrypted_message, encrypted_text=encrypted_message)
-            tweet = Tweet.objects.create(username=username, key=key, link=link, twitter_user_id=twitter_user.id)
+            encrypted_message_obj = EncryptedMessage.objects.create(encrypted_message=encrypted_message, encrypted_text=encrypted_message)
+            tweet = Tweet.objects.create(username=username, key=key, link=link, twitter_user_id=twitter_user.id, message=encrypted_message_obj)
 
             # Construct the tweet message
             tweet_text = f'hello @{username}! I have a message for you: {link}'
@@ -65,27 +65,26 @@ def tweet_view(request):
     return render(request, 'BypassDM_V1/tweet.html', {'form': form})
 
 
-
-
+    
 @login_required
 def message_view(request, tweet_uuid):
     try:
-#         tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
+        # tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
         
-        tweet = Tweet.objects.get(link=f'https://bypassdm.com/bypassdm_v1/private_message/{tweet_uuid}}/')
+        tweet = Tweet.objects.get(link=f'https://bypassdm.com/BypassDM_V1/private_message/{tweet_uuid}/')
         
         
         if tweet.username.lower() == request.user.username.lower():
             # Decrypt the message using the Fernet module and the secret key
             f = Fernet(tweet.key)
-            decrypted_message = f.decrypt(tweet.encrypted_message.encode('utf-8')).decode()
+            decrypted_message = f.decrypt(tweet.message.encrypted_message.encode('utf-8')).decode()
 
             # Pass the decrypted message to the template
             return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message})
         else:
-            return render(request, 'BypassDM_V1/error.html', {'error': 'You are not authorized to view this message'})
+            return render(request, 'BypassDM_V1/error.html', {'error_message': 'You are not authorized to view this message'})
     except Tweet.DoesNotExist:
-        return render(request, 'BypassDM_V1/error.html', {'error': 'Message not found'})
+        return render(request, 'BypassDM_V1/error.html', {'error_message': 'Message not found'})
 
 
 
