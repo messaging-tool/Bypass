@@ -69,8 +69,7 @@ def tweet_view(request):
 
 @login_required
 def message_view(request, tweet_uuid):
-    try:
-#         tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
+        # tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
         
         tweet = Tweet.objects.get(link=f'https://bypassdm.com/BypassDM_V1/private_message/{tweet_uuid}/')
         
@@ -84,8 +83,7 @@ def message_view(request, tweet_uuid):
             return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message})
         else:
             return render(request, 'BypassDM_V1/error.html', {'error_message': 'You are not authorized to view this message'})
-    except Tweet.DoesNotExist:
-        return render(request, 'BypassDM_V1/error.html', {'error_message': 'Message not found'})
+        # return render(request, 'BypassDM_V1/error.html', {'error_message': 'Message not found'})
 
 
 
