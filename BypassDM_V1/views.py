@@ -50,7 +50,7 @@ def tweet_view(request):
 
             # Save the tweet to the database
             encrypted_message_obj = EncryptedMessage.objects.create(encrypted_message=encrypted_message, encrypted_text=encrypted_message)
-            tweet = Tweet.objects.create(username=username, key=key, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
+            tweet = Tweet.objects.create(twitter_user=twitter_user, username=username, key=key, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
 
             # Construct the tweet message
             tweet_text = f'hello @{username}! I have a message for you: {link}'
