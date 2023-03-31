@@ -86,7 +86,6 @@ def message_view(request, tweet_uuid):
 
 
 
-
 # @login_required
 # def message_view(request, tweet_uuid):
 #     try:
