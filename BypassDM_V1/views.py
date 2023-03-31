@@ -89,7 +89,7 @@ def message_view(request, tweet_uuid):
             decrypted_message = f.decrypt(tweet.message.encrypted_message).decode()
 
             # Decrypt the message using the Fernet module and the secret key
-            # f = Fernet(tweet.key)
+            f = Fernet(tweet.key)
             # decrypted_message = f.decrypt(tweet.message.encrypted_text).decode()
 
             # Pass the decrypted message to the template
