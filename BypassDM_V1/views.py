@@ -48,9 +48,12 @@ def tweet_view(request):
             tweet_uuid = uuid.uuid4()
             link = f'https://BypassDM.com/BypassDM_V1/private_message/{tweet_uuid}/'
             
+            # ENCRYPT KEY
+            key_string = key.decode()
+            
             # Save the tweet to the database
             encrypted_message_obj = EncryptedMessage.objects.create(encrypted_message=encrypted_message, encrypted_text=encrypted_message)
-            tweet = Tweet.objects.create(twitter_user=twitter_user, username=username, key=key, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
+            tweet = Tweet.objects.create(twitter_user=twitter_user, username=username, key=key_string, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
 
             # Construct the tweet message
             tweet_text = f'hello @{username}! I have a message for you: {link}'
@@ -67,7 +70,6 @@ def tweet_view(request):
 
   
 
-    
 @login_required
 def message_view(request, tweet_uuid):
         # tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
@@ -79,9 +81,9 @@ def message_view(request, tweet_uuid):
         if tweet.username.lower() == request.user.username.lower():
             # Decrypt the message using the Fernet module and the secret key
             # DECRYPT KEY
-
+            key_byte = tweet.key.encode()
             # Decrypt the message using the Fernet module and the secret key
-            f = Fernet(tweet.key)
+            f = Fernet(key_byte)
             decrypted_message = f.decrypt(tweet.message.encrypted_text).decode()
 
             # Pass the decrypted message to the template
