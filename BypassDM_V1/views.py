@@ -86,7 +86,7 @@ def message_view(request, tweet_uuid):
             sender_fullame = tweet.twitter_user_fullname
 
             # Pass the decrypted message to the template
-            return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message, 'sender_username': sender_username, 'sender_fullame': sender_fullame})
+            return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message, 'sender_username': sender_username, 'sender_fullname': sender_fullame})
         return render(request, 'BypassDM_V1/error.html', {'error_message': 'You are not authorized to view this message'})
     except Tweet.DoesNotExist:
         return render(request, 'BypassDM_V1/error.html', {'error_message': 'Message not found'})
