@@ -1,3 +1,4 @@
+import base64
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -47,10 +48,14 @@ def tweet_view(request):
             # Construct the link with a unique UUID
             tweet_uuid = uuid.uuid4()
             link = f'https://BypassDM.com/BypassDM_V1/private_message/{tweet_uuid}/'
+            
+            # ENCRYPT THE KEY
+            key_byte = base64.urlsafe_b64encode(key)
+            key_string = key_byte.decode()
 
             # Save the tweet to the database
             encrypted_message_obj = EncryptedMessage.objects.create(encrypted_message=encrypted_message, encrypted_text=encrypted_message)
-            tweet = Tweet.objects.create(twitter_user=twitter_user, username=username, key=key, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
+            tweet = Tweet.objects.create(twitter_user=twitter_user, username=username, key=key_string, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
 
             # Construct the tweet message
             tweet_text = f'hello @{username}! I have a message for you: {link}'
@@ -68,20 +73,29 @@ def tweet_view(request):
     
 @login_required
 def message_view(request, tweet_uuid):
+    try:
         # tweet = Tweet.objects.get(link=f'https://bypassdm.com/private_message/{tweet_uuid}/')
-        
         link_query = f'https://bypassdm.com/BypassDM_V1/private_message/{tweet_uuid}/'
-        tweet = Tweet.objects.get(link__iexact=link_query)
+        tweet = Tweet.objects.get(link=link_query)
         
         
         if tweet.username.lower() == request.user.username.lower():
             # Decrypt the message using the Fernet module and the secret key
-            f = Fernet(tweet.key)
-            decrypted_message = f.decrypt(tweet.message.encrypted_text).decode()
+            # DECRYPT KEY
+            key_string = tweepy.key
+            key_byte = base64.urlsafe_b64decode(key_string.encode())
+            key = Fernet(key_byte)
+            f = Fernet(key)
+            decrypted_message = f.decrypt(tweet.message.encrypted_message).decode()
 
             # Pass the decrypted message to the template
             return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message})
-        return render(request, 'BypassDM_V1/error.html', {'error_message': 'You are not authorized to view this message'})
+        else:
+            return render(request, 'BypassDM_V1/error.html', {'error_message': 'You are not authorized to view this message'})
+    except Tweet.DoesNotExist:
+        return render(request, 'BypassDM_V1/error.html', {'error_message': 'Message not found'})
+
+    
 
 
 
