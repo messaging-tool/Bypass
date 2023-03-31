@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Tweet, EncryptedMessage
 from autho.models import TwitterUser
-import tweepy
 from django.urls import reverse
 from django.conf import settings
 from tweepy import OAuthHandler, API
@@ -84,7 +83,7 @@ def message_view(request, tweet_uuid):
         if tweet.username.lower() == request.user.username.lower():
             # Decrypt the message using the Fernet module and the secret key
             # DECRYPT KEY
-            key_string = tweepy.key
+            key_string = tweet.key
             key_byte = base64.urlsafe_b64decode(key_string.encode())
             key = Fernet(key_byte)
             f = Fernet(key)
