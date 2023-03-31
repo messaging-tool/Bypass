@@ -18,7 +18,6 @@ class Tweet(models.Model):
 
 
 class EncryptedMessage(models.Model):
-    tweet_id = models.ForeignKey    
     encrypted_text = models.TextField()
     encrypted_message = models.BinaryField(null=True)
 
