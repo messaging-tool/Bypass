@@ -5,6 +5,7 @@ from cryptography.fernet import Fernet
 
 class Tweet(models.Model):
     twitter_user = models.ForeignKey(TwitterUser, on_delete=models.CASCADE)
+    twitter_user_fullname = models.CharField(max_length=150)
     username = models.CharField(max_length=255)
     message = models.ForeignKey('EncryptedMessage', on_delete=models.CASCADE)
     link = models.CharField(max_length=255)

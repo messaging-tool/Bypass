@@ -54,7 +54,7 @@ def tweet_view(request):
             
             # Save the tweet to the database
             encrypted_message_obj = EncryptedMessage.objects.create(encrypted_message=encrypted_message, encrypted_text=str_encrypted_msg)
-            tweet = Tweet.objects.create(twitter_user=twitter_user, username=username, key=key_string, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
+            tweet = Tweet.objects.create(twitter_user=twitter_user, username=username, twitter_user_fullname=twitter_user.name, key=key_string, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
 
             # Construct the tweet message
             tweet_text = f'hello @{username}! I have a message for you: {link}'
@@ -82,10 +82,11 @@ def message_view(request, tweet_uuid):
             f = Fernet(key_byte)
             byte_encrypted_msg = tweet.message.encrypted_text.encode()
             decrypted_message = f.decrypt(byte_encrypted_msg).decode()
-            sender = request.user.username
+            sender_username = tweet.twitter_user
+            sender_fullame = tweet.twitter_user_fullname
 
             # Pass the decrypted message to the template
-            return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message, 'sender': sender})
+            return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message, 'sender_username': sender_username, 'sender_fullame': sender_fullame})
         return render(request, 'BypassDM_V1/error.html', {'error_message': 'You are not authorized to view this message'})
     except Tweet.DoesNotExist:
         return render(request, 'BypassDM_V1/error.html', {'error_message': 'Message not found'})
