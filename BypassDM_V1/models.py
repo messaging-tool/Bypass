@@ -11,7 +11,7 @@ class Tweet(models.Model):
     uuid = models.UUIDField(default=uuid.uuid4, editable=False)
     timestamp = models.DateTimeField(auto_now_add=True)
     twitter_userid = models.CharField(max_length=100, default='')
-    key = models.BinaryField(null=True)
+    key = models.TextField(null=True)
 
     def __str__(self):
         return '{}: {}'.format(self.username, self.timestamp)
