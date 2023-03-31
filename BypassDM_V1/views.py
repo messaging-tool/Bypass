@@ -87,16 +87,20 @@ def message_view(request, tweet_uuid):
         return render(request, 'BypassDM_V1/error.html', {'error_message': 'Invalid message link'})
     
     if tweet.username.lower() == request.user.username.lower():
-        # Decrypt the message using the Fernet module and the secret key
-        key_string = tweet.key.encode()
-        key_byte = base64.urlsafe_b64decode(key_string)
-        f = Fernet(key_byte)
-        decrypted_message = f.decrypt(tweet.message.encrypted_message).decode()
-
-        # Pass the decrypted message to the template
-        return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message})
+        try:
+            # Decrypt the message using the Fernet module and the secret key
+            key_string = tweet.key.encode()
+            key_byte = base64.urlsafe_b64decode(key_string + b'=' * (-len(key_string) % 4)) # padding the key with "="
+            f = Fernet(key_byte)
+            decrypted_message = f.decrypt(tweet.message.encrypted_message.encode()).decode()
+            
+            # Pass the decrypted message to the template
+            return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message})
+        except Exception as e:
+            return render(request, 'BypassDM_V1/error.html', {'error_message': 'Error decrypting the message'})
     else:
         return render(request, 'BypassDM_V1/error.html', {'error_message': 'You are not authorized to view this message'})
+
 
 
 
