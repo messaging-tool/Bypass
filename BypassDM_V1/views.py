@@ -82,12 +82,13 @@ def message_view(request, tweet_uuid):
             f = Fernet(key_byte)
             byte_encrypted_msg = tweet.message.encrypted_text.encode()
             decrypted_message = f.decrypt(byte_encrypted_msg).decode()
+            sender = request.user.username
 
             # Pass the decrypted message to the template
-            return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message})
+            return render(request, 'BypassDM_V1/message.html', {'message': decrypted_message, 'sender': sender})
         return render(request, 'BypassDM_V1/error.html', {'error_message': 'You are not authorized to view this message'})
     except Tweet.DoesNotExist:
-        return render(request, 'BypassDM_V1/error.html', {'error': 'Message not found'})
+        return render(request, 'BypassDM_V1/error.html', {'error_message': 'Message not found'})
 
 
 
