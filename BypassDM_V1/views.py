@@ -83,8 +83,8 @@ def message_view(request, tweet_uuid):
         if tweet.username.lower() == request.user.username.lower():
             # Decrypt the message using the Fernet module and the secret key
             # DECRYPT KEY
-            key_string = tweet.key
-            key_byte = base64.urlsafe_b64decode(key_string.encode())
+            key_string = tweet.key.encode()
+            key_byte = base64.urlsafe_b64decode(key_string)
             f = Fernet(key_byte)
             decrypted_message = f.decrypt(tweet.message.encrypted_message).decode()
 
