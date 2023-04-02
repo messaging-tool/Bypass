@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn BypassDM.wsgi:aplication
+web: gunicorn BypassDM.wsgi:application
