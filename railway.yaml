@@ -1,0 +1,12 @@
+env:
+  DJANGO_SETTINGS_MODULE: BypassDM.settings
+services:
+  web:
+    command: gunicorn BypassDM.wsgi
+    env:
+      PYTHONUNBUFFERED: "true"
+    # Add the following lines to serve static files:
+    ports:
+      - 8000:8000
+    static_build_command: python manage.py collectstatic --noinput
+    static_path: BypassDM/LandingPage/static
