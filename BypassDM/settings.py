@@ -11,9 +11,11 @@ from decouple import config
 # SECRET_KEY = config('DJANGO_SECRET_KEY')
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
+DEBUG = os.environ.get('DEBUG') == "TRUE"
+
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config('DJANGO_DEBUG', cast=bool)
-DEBUG = os.environ.get("DJANGO_DEBUG")
+# DEBUG = os.environ.get("DJANGO_DEBUG")
 
 #ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
