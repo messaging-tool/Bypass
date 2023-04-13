@@ -22,7 +22,7 @@ DEBUG = True
 # DEBUG = config('DJANGO_DEBUG', cast=bool)
 # DEBUG = os.environ.get("DJANGO_DEBUG")
 
-#ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
 ALLOWED_HOSTS = ['bypassdms.com']
 
