@@ -46,7 +46,7 @@ six==1.16.0
 social-auth-core==4.3.0
 sqlparse==0.4.3
 tomli==2.0.1
-tweepy==4.12.1
+tweepy 4.13.0
 types-cryptography==3.3.23
 tzdata==2022.4
 urllib3==1.26.12
