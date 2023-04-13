@@ -22,9 +22,9 @@ DEBUG = True
 # DEBUG = config('DJANGO_DEBUG', cast=bool)
 # DEBUG = os.environ.get("DJANGO_DEBUG")
 
-#ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS').split(',')
 
-ALLOWED_HOSTS=["127.0.0.1", "localhost", "bypassdms.com", "bypassdm.up.railway.app"]
+# ALLOWED_HOSTS=["127.0.0.1", "localhost", "bypassdms.com", "bypassdm.up.railway.app"]
 
 
 
