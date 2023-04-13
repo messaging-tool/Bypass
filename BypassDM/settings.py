@@ -9,9 +9,14 @@ from decouple import config
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = config('DJANGO_SECRET_KEY')
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
+# SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
+SECRET_KEY ='django-insecure-my2im41=03e3%hhjni1a6#b+^-#o#_i=zl_fss9oz=4t@4#u57'
 
-DEBUG = os.environ.get('DEBUG') == "TRUE"
+
+# DEBUG = os.environ.get('DEBUG') == "TRUE"
+
+DEBUG = True
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config('DJANGO_DEBUG', cast=bool)
