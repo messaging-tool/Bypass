@@ -47,7 +47,7 @@ def tweet_view(request):
 
             # Construct the link with a unique UUID
             tweet_uuid = uuid.uuid4()
-            link = f'https://BypassDM.com/BypassDM_V1/private_message/{tweet_uuid}/'
+            link = f'https://BypassDMs.com/BypassDM_V1/private_message/{tweet_uuid}/'
             
             # ENCRYPT KEY
             key_string = key.decode()
@@ -72,7 +72,7 @@ def tweet_view(request):
 @login_required
 def message_view(request, tweet_uuid):
     try:
-        link_query = f'https://bypassdm.com/BypassDM_V1/private_message/{tweet_uuid}/'
+        link_query = f'https://bypassdms.com/BypassDM_V1/private_message/{tweet_uuid}/'
         tweet = Tweet.objects.get(link__iexact=link_query)        
         if tweet.username.lower() == request.user.username.lower():
             # Decrypt the message using the Fernet module and the secret key
