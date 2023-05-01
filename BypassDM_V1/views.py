@@ -60,7 +60,7 @@ def tweet_view(request):
             tweet_text = f'hello @{username}! I have a message for you: {link}'
             
             # Construct the Open Graph metadata
-            og_title = 'BypassDMs'
+            og_title = 'From BypassDM:'
             og_description = ' A public email for Twitter individuals '
             og_url = link
             og_image = 'https://ibb.co/nP7SxWQ'
