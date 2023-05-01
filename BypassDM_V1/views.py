@@ -66,7 +66,7 @@ def tweet_view(request):
             og_image = 'https://ibb.co/nP7SxWQ'
 
             # Construct the Twitter URL with pre-populated tweet and Open Graph metadata
-            twitter_url = f'https://twitter.com/intent/tweet?text={tweet_text}&url={og_url}&title={og_title}&description={og_description}&image={og_image}'
+            twitter_url = f'https://twitter.com/intent/tweet?text={tweet_text}&title={og_title}&description={og_description}&image={og_image}'
 
             # Construct the Twitter URL with pre-populated tweet
 #             twitter_url = f'https://twitter.com/intent/tweet?text={tweet_text}'
