@@ -58,9 +58,18 @@ def tweet_view(request):
 
             # Construct the tweet message
             tweet_text = f'hello @{username}! I have a message for you: {link}'
+            
+            # Construct the Open Graph metadata
+            og_title = 'BypassDMs'
+            og_description = ' A public email for Twitter individuals '
+            og_url = link
+            og_image = 'https://ibb.co/nP7SxWQ'
+
+            # Construct the Twitter URL with pre-populated tweet and Open Graph metadata
+            twitter_url = f'https://twitter.com/intent/tweet?text={tweet_text}&url={og_url}&title={og_title}&description={og_description}&image={og_image}'
 
             # Construct the Twitter URL with pre-populated tweet
-            twitter_url = f'https://twitter.com/intent/tweet?text={tweet_text}'
+#             twitter_url = f'https://twitter.com/intent/tweet?text={tweet_text}'
 
             # Redirect to Twitter for tweeting
             return redirect(twitter_url)
