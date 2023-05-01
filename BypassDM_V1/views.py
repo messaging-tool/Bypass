@@ -57,10 +57,10 @@ def tweet_view(request):
             tweet = Tweet.objects.create(twitter_user=twitter_user, username=username, twitter_user_fullname=twitter_user.name, key=key_string, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
 
             # Construct the tweet message
-            tweet_text = f'hello @{username}! I have a message for you: {link}'
+            tweet_text = f'Hello @{username}! I have a message for you: {link}'
             
             # Construct the Open Graph metadata
-            og_title = 'From BypassDM:'
+            og_title = 'From BypassDM-'
             og_description = ' A public email for Twitter individuals '
             og_url = link
             og_image = 'https://ibb.co/nP7SxWQ'
