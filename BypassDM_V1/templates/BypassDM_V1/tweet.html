@@ -21,7 +21,7 @@
                     <form action="{% url 'BypassDM_V1:create_message' %}" method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button type="submit" class="btn btn-primary mt-3"><i class="fas fa-paper-plane"></i> Tweet & Send
+                        <button type="submit" class="btn btn-primary mt-3"><i class="fas fa-paper-plane"></i> Write & Send
                         </button>
                     </form>
                 </div>
