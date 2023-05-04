@@ -8,7 +8,7 @@ colorama==0.4.6
 cryptography==38.0.1
 defusedxml==0.7.1
 distlib==0.3.6
-Django==4.2.1
+Django==4.1.2
 django-allauth==0.51.0
 django-ckeditor==5.4.0
 django-cleanup==2.1.0
