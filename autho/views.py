@@ -72,4 +72,4 @@ def index(request):
 @login_required
 def twitter_logout(request):
     logout(request)
-    return render(request, 'LandingPage/index.html')
+    return render(request, 'autho/logout.html')
