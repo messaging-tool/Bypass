@@ -1,7 +1,17 @@
 {% extends 'BypassDM_V1/base.html' %}
 
 
-<div id="paypal-button-container-P-7NJ758330S702630NMRK2MWY"></div>
+<!DOCTYPE html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures optimal rendering on mobile devices. -->
+
+</head>
+
+<body>
+  
+<div id="paypal-button-container-P-29M04627G5285440GMRK4C2I"></div>
 <script src="https://www.paypal.com/sdk/js?client-id=AcOhvev8eGVpfZht0NjPnFzbq7g9cFi0cx5dXcjDu-vWjYCYr97U1ACVj1qYCVINkLBv3Bh1HWXcKa4K&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
 <script>
   paypal.Buttons({
@@ -14,11 +24,16 @@
       createSubscription: function(data, actions) {
         return actions.subscription.create({
           /* Creates the subscription */
-          plan_id: 'P-7NJ758330S702630NMRK2MWY'
+          plan_id: 'P-29M04627G5285440GMRK4C2I'
         });
       },
       onApprove: function(data, actions) {
         alert(data.subscriptionID); // You can add optional success message for the subscriber here
       }
-  }).render('#paypal-button-container-P-7NJ758330S702630NMRK2MWY'); // Renders the PayPal button
+  }).render('#paypal-button-container-P-29M04627G5285440GMRK4C2I'); // Renders the PayPal button
 </script>
+
+  
+  </body>
+
+</html>
