@@ -204,7 +204,7 @@
         transform: scale(1);
         width: 100vw;
         z-index: 0;
-        background-image: linear-gradient(45deg, rgba(116, 104, 105, 0.831) 0%, rgba(92, 100, 103, 0.51) 81%), url('images/bg.jpg');
+        background-image: linear-gradient(45deg, rgba(116, 104, 105, 0.831) 0%, rgba(92, 100, 103, 0.51) 81%), url('/static/images/bg.jpg');
         background-position: 0% 0%, top;
         background-repeat: repeat, no-repeat;
         background-size: cover, cover;
@@ -2917,7 +2917,7 @@
                 <div>
                   <div id="image01" class="image">
                     <span class="frame">
-                      <img src="images/image01.png" alt>
+                      <img src="{% static 'images/image01.png' %}" alt>
                     </span>
                   </div>
                 </div>
@@ -2938,7 +2938,7 @@
                 <div>
                   <div id="image03" class="image">
                     <span class="frame">
-                      <img src="images/image03.png" alt>
+                      <img src="{% static 'images/image03.png' %}" alt>
                     </span>
                   </div>
                 </div>
@@ -2951,7 +2951,7 @@
                 <div>
                   <div id="image02" class="image">
                     <span class="frame">
-                      <img src="images/image02.png" alt>
+                      <img src="{% static 'images/image02.png' %}" alt>
                     </span>
                   </div>
                 </div>
