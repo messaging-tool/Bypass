@@ -57,7 +57,7 @@ def tweet_view(request):
             tweet = Tweet.objects.create(twitter_user=twitter_user, username=username, twitter_user_fullname=twitter_user.name, key=key_string, link=link, twitter_userid=twitter_user.id, message=encrypted_message_obj)
 
             # Construct the tweet message
-            tweet_text = f'bcc @{username}! I have a message for you: {link}'
+            tweet_text = f'bcc @{username}! msg: {link}'
             
             # Construct the Open Graph metadata
             og_title = 'From BypassDM-'
