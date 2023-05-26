@@ -63,12 +63,12 @@ def tweet_view(request):
             
             # Construct the Open Graph metadata
             og_title = 'From BypassDM-'
-            og_description = ' A public email for Twitter individuals '
+            og_description = 'A tool that bypasses twitter DMs limitations'
             og_url = link
             og_image = 'https://ibb.co/nP7SxWQ'
 
             # Construct the Twitter URL with pre-populated tweet and Open Graph metadata
-            twitter_url = f'https://twitter.com/intent/tweet?text={tweet_text}&title={og_title}&description={og_description}&image={og_image}'
+            twitter_url = f'https://twitter.com/intent/tweet?text={tweet_text}&description={og_description}&image={og_image}'
 
             # Construct the Twitter URL with pre-populated tweet
 #             twitter_url = f'https://twitter.com/intent/tweet?text={tweet_text}'
