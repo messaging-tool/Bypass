@@ -59,7 +59,7 @@ def tweet_view(request):
             # Construct the tweet message
             # tweet_text = f'bcc @{username}! msg: {link}'
             
-            tweet_text = f'Hey @{username}, I have a confidential message just for you. Bypass the cluttered DMs and access it securely on BypassDM. Visit BypassDMs.com to unveil your exclusive message.'
+            tweet_text = f'Hey @{username}, I have a confidential message just for you. Bypass the cluttered DMs and access it securely on BypassDM. Visit {link} to unveil your exclusive message.'
             
             # Construct the Open Graph metadata
             og_title = 'From BypassDM-'
