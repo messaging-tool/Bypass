@@ -185,4 +185,9 @@ CSRF_TRUSTED_ORIGINS = ['https://bypassdms.com']
 
 LOGIN_REDIRECT_URL = '/BypassDM_V1/tweet/'
 
-TINYMCE_JS_URL = '/static/tinymce/tinymce.min.js'
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': 'advlist autolink lists link image charmap print preview anchor',
+    'toolbar': 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+    'width': '100%',
+    'height': 320,
+}
