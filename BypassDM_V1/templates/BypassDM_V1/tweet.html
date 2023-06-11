@@ -1,5 +1,57 @@
 {% extends 'BypassDM_V1/base.html' %}
 
+{% block title %}BypassDM - Write your message!{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+          integrity="sha512-+r1jSDf9XyEQAdR30RiMn0fEjBx3rtqAS0Zw1tJjPu38lGsPSeIy/Bdu+xCvJRR5ue5o5sfFnVZz+drfgv/QGg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card my-5">
+                <div class="card-header bg-dark">
+                    <h3 class="text-white text-center mb-0">Your message here</h3>
+                </div>
+                <div class="card-body bg-secondary">
+                    <form action="{% url 'BypassDM_V1:create_message' %}" method="post">
+                        {% csrf_token %}
+                        {{ form.username }}
+                        <textarea class="tinymce" name="message"></textarea>
+                        <button type="submit" class="btn btn-primary mt-3"><i class="fas fa-paper-plane"></i> Write & Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script>
+        tinymce.init({
+            selector: '.tinymce',
+            plugins: 'advlist autolink lists link image charmap print preview anchor',
+            toolbar: 'undo redo | formatselect | bold italic backcolor | \
+                      alignleft aligncenter alignright alignjustify | \
+                      bullist numlist outdent indent | removeformat | help'
+        });
+    </script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+<!-- {% extends 'BypassDM_V1/base.html' %}
+
 
 {% block title %}BypassDM - Write your message!{% endblock %}
 
@@ -38,3 +90,4 @@
 
 
 
+ -->
