@@ -184,3 +184,5 @@ CSRF_TRUSTED_ORIGINS = ['https://bypassdms.com']
 
 
 LOGIN_REDIRECT_URL = '/BypassDM_V1/tweet/'
+
+TINYMCE_JS_URL = '/static/tinymce/tinymce.min.js'
