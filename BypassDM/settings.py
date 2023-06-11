@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'BypassDM_V1',
     'autho',
     'LandingPage',
+    'tinymce',
     
 ]
 
