@@ -12,3 +12,6 @@ def privacy_policy(request):
 
 def terms_of_use(request):
     return render(request, 'LandingPage/terms_of_use.html')
+
+def about(request):
+    return render(request, 'LandingPage/about.html')
