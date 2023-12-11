@@ -73,7 +73,7 @@ We understand that privacy and security are paramount. Rest assured, BypassDM is
 
 Ready to revolutionize your Twitter communication? Follow these steps:
 
-1. Visit [BypassDM.com](https://bypassdm.example)
+1. Visit [BypassDM.com](https://bypassdm.com)
 2. Sign in with Twitter.
 3. Enter the Twitter username of the intended user.
 4. Type your message.
