@@ -24,6 +24,11 @@ When the recipient clicks the link, they will go through a Twitter authenticatio
 
 ## Installation
 
+Clone the repo
+   ```sh
+   git clone https://github.com/messaging-tool/Bypass.git
+   ```
+
 ### Clone the repository
 git clone https://github.com/messaging-tool/Bypass.git
 
