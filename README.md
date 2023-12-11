@@ -22,6 +22,30 @@ When the recipient clicks the link, they will go through a Twitter authenticatio
 
 - **Versatile Use:** Whether for personal, professional, or genuine reasons, BypassDM allows effective communication on Twitter.
 
+## Installation
+
+# Clone the repository
+git clone https://github.com/messaging-tool/Bypass.git
+
+# Navigate to the project directory
+cd your-django-project
+
+# Set up a virtual environment (optional but recommended)
+python -m venv env
+
+# Activate the virtual environment
+# Windows
+venv\Scripts\activate
+# Unix/macOS
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Apply migrations
+python manage.py migrate
+
+
 ## Privacy and Security
 
 We understand that privacy and security are paramount. Rest assured, BypassDM is designed with stringent measures to safeguard your information. Your data is treated with the utmost confidentiality, and we are committed to maintaining a secure environment.
