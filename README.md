@@ -73,10 +73,22 @@ We understand that privacy and security are paramount. Rest assured, BypassDM is
 
 Ready to revolutionize your Twitter communication? Follow these steps:
 
-1. Visit [BypassDM.com](https://bypassdm.example) 
-2. Enter the Twitter username of the intended user.
-3. Type your message.
-4. Share the generated private link on Twitter.
+1. Visit [BypassDM.com](https://bypassdm.example)
+2. Sign in with Twitter.
+3. Enter the Twitter username of the intended user.
+4. Type your message.
+5. Share the generated private link on Twitter or intended user will see when they sign up for **BypassDM**.
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! 
+
+Thanks again!
+
+## License
+Distributed under the **MIT License**. 
 
 ## Feedback
 
