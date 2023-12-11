@@ -24,25 +24,25 @@ When the recipient clicks the link, they will go through a Twitter authenticatio
 
 ## Installation
 
-# Clone the repository
+### Clone the repository
 git clone https://github.com/messaging-tool/Bypass.git
 
-# Navigate to the project directory
+### Navigate to the project directory
 cd your-django-project
 
-# Set up a virtual environment (optional but recommended)
+### Set up a virtual environment (optional but recommended)
 python -m venv env
 
-# Activate the virtual environment
-# Windows
+### Activate the virtual environment
+### Windows
 venv\Scripts\activate
-# Unix/macOS
+### Unix/macOS
 source venv/bin/activate
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Apply migrations
+### Apply migrations
 python manage.py migrate
 
 
