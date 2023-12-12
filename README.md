@@ -1,26 +1,26 @@
-# BypassDM - Breaking the Barriers of Twitter DM Limitations
+# SecurDM - Breaking the Barriers of Twitter DM Limitations
 
 ## Introduction
 
-Welcome to BypassDM, a powerful tool designed to overcome Twitter's DM limitations, enabling users to send private messages to anyone on Twitter, regardless of their DM settings. If you've ever wanted to communicate with public figures, celebrities, or businesses, or engage in private conversations with other Twitter users, BypassDM is the solution you've been waiting for.
+Welcome to SecurDM, a powerful tool designed to overcome Twitter's DM limitations, enabling users to send private messages to anyone on Twitter, regardless of their DM settings. If you've ever wanted to communicate with public figures, celebrities, or businesses, or engage in private conversations with other Twitter users, SecurDM is the solution you've been waiting for.
 
 ## How It Works
 
-BypassDM simplifies the process of sending private messages on Twitter. Here's how you can use it:
+SecurDM simplifies the process of sending private messages on Twitter. Here's how you can use it:
 
 1. Enter the Twitter username of the intended user.
 2. Type your message.
-3. BypassDM generates a private link that you can share on Twitter.
+3. SecurDM generates a private link that you can share on Twitter.
 
 When the recipient clicks the link, they will go through a Twitter authentication process to verify if they are allowed to open the message.
 
 ## Key Features
 
-- **Universal Communication:** BypassDM opens up communication channels with anyone on Twitter, breaking through DM restrictions.
+- **Universal Communication:** SecurDM opens up communication channels with anyone on Twitter, breaking through DM restrictions.
 
 - **Privacy First:** Your messages are encrypted, ensuring the utmost privacy. Only the Twitter username is visible.
 
-- **Versatile Use:** Whether for personal, professional, or genuine reasons, BypassDM allows effective communication on Twitter.
+- **Versatile Use:** Whether for personal, professional, or genuine reasons, SecurDM allows effective communication on Twitter.
 
 ## Installation
 
@@ -67,17 +67,17 @@ When the recipient clicks the link, they will go through a Twitter authenticatio
 
 ## Privacy and Security
 
-We understand that privacy and security are paramount. Rest assured, BypassDM is designed with stringent measures to safeguard your information. Your data is treated with the utmost confidentiality, and we are committed to maintaining a secure environment.
+We understand that privacy and security are paramount. Rest assured, SecurDM is designed with stringent measures to safeguard your information. Your data is treated with the utmost confidentiality, and we are committed to maintaining a secure environment.
 
 ## Getting Started
 
 Ready to revolutionize your Twitter communication? Follow these steps:
 
-1. Visit [BypassDMs.com](https://bypassdms.com)
+1. Visit [SecureDMs.com](https://SecureDMs.com)
 2. Sign in with Twitter.
 3. Enter the Twitter username of the intended user.
 4. Type your message.
-5. Share the generated private link on Twitter or intended user will see when they sign up for **BypassDM**.
+5. Share the generated private link on Twitter or intended user will see when they sign up for **SecureDM**.
 
 ## Contributing
 
@@ -92,6 +92,6 @@ Distributed under the **MIT License**.
 
 ## Feedback
 
-We value your thoughts! Please give BypassDM a try and share your feedback in the comments below. Your input is crucial as we continue to enhance and refine the tool.
+We value your thoughts! Please give SecureDM a try and share your feedback in the comments below. Your input is crucial as we continue to enhance and refine the tool.
 
-Thank you for choosing BypassDM - where Twitter communication knows no limits!
+Thank you for choosing SecureDM - where Twitter communication knows no limits!
